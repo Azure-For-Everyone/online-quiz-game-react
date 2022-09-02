@@ -11,22 +11,23 @@ footer {
 }
 
 h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 800;
   margin-top: 80px;
   line-height: 1.5em;
   letter-spacing: .1em;
-  font-size: 40px;
+  font-size: 80px;
   color: #fff;
   text-align: center;
   position: relative;
+  width: 1250px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  background-color: #0e0124;
 }
+
 .big{
   text-transform: uppercase;
   font-size: 50px;
@@ -45,19 +46,36 @@ h1 {
     bottom:0;
 }
 
+header {
+  top: 15%;
+  position: absolute;
+}
+
 .startScreen {
   position: relative;
   height: 100vh;
   display: flex;
   color: white;
-  background-color: #020230;
+  /*background-color: #020230;*/
+  background-image: url(./asset/java-bg.png);
+  background-size: cover;
   padding: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   position: relative;
+}
 
+.startScreen:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right,black,black);
+  opacity: .85; 
 }
 
 .app {
@@ -305,13 +323,15 @@ h1 {
 }
 
 .startInput {
+  background: #FCFCFC;
+  color: #686868;
+  border-radius: 4px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 13px 18px;
   width: 100%;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 18px;
-  color: black;
 }
 
 .startInput:focus {
@@ -320,7 +340,10 @@ h1 {
 
 .startButton {
   width: 100%;
-  cursor: pointer;
-  font-weight: 600;
-  text-align: center;
+  background: #5B5FC7;
+  box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.32), 0px 1.6px 3.6px rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  border: none;
+  padding: 10px 12px;
+  margin: 10px 0 0 0;
 }

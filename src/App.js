@@ -116,13 +116,10 @@ function App() {
 
       <div className="startScreen">
         <header>
-          <h1>Welcome to <span className="big">QUIZ TIME</span><br />an online quiz app</h1>
+          <h1>Welcome to the Devoxx 2022 <br/>  Microsoft Quiz</h1>
         </header>
-
-
         <Start setUsername={setUserName} />
-        <footer>
-          <p className="copyRight">Ⓒ Copyright, {myName} {currentYear}. </p></footer>
+        <img src="./asset/msft-logo.svg"/>
       </div>
     ) : (
 

@@ -11,13 +11,14 @@ export default function Start({ setUsername }) {
 
   return (
     <div className="start">
+      
       <input
         className="startInput"
-        placeholder="enter your name"
+        placeholder="Please provide your full name"
         ref={inputRef}
       />
       <button className="startButton btn btn-outline-light" onClick={handleClick}>
-        Start
+        Let's go!
       </button>
     </div>
   );
