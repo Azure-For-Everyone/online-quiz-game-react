@@ -2,16 +2,11 @@ import "./App.css";
 import React from "react";
 import { useEffect, useState, useMemo } from 'react';
 import { Questionnaire } from './components';
-
 import Timer from "./components/Timer";
 import Change from "./components/Change";
-
-
 import Start from "./components/Start";
 import Timesup from "./components/Timesup";
 import DoubleTime from "./components/DoubleTime";
-
-
 
 const apiUrl = "https://opentdb.com/api.php?amount=100";
 
@@ -50,16 +45,16 @@ function App() {
   const moneyPyramid = useMemo(
     () =>
       [
-        { id: 1, amount: 100 },
-        { id: 2, amount: 200 },
-        { id: 3, amount: 300 },
-        { id: 4, amount: 500 },
-        { id: 5, amount: 1000 },
-        { id: 6, amount: 2000 },
-        { id: 7, amount: 4000 },
-        { id: 8, amount: 8000 },
-        { id: 9, amount: 16000 },
-        { id: 10, amount: 32000 },
+        { id: 1, amount: 10 },
+        { id: 2, amount: 10 },
+        { id: 3, amount: 10 },
+        { id: 4, amount: 10 },
+        { id: 5, amount: 10 },
+        { id: 6, amount: 10 },
+        { id: 7, amount: 10 },
+        { id: 8, amount: 10 },
+        { id: 9, amount: 10 },
+        { id: 10, amount: 10 },
 
       ].reverse(),
     []
@@ -67,20 +62,65 @@ function App() {
 
   //Fetching the questions's API, Creating current question array and mix it
   useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        //mapping fetched data and creating current question&answers array
-        const questions = data.results.map((question) =>
-        ({
-          ...question,
-          answers: [
-            question.correct_answer,
-            ...question.incorrect_answers,
-          ].sort(() => Math.random() - 0.5),
-        }))
-        setQuestions(questions);
-      });
+    const qs = [
+      {
+        "category": "Azure",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Where can I deploy my Maven-packaged Spring Boot application?",
+        "correct_answer": "All off above",
+          "incorrect_answers": [
+            "App Service",
+            "VM",
+            "Spring Cloud"
+          ]
+        },
+        {
+          "category": "Azure",
+          "type": "multiple",
+          "difficulty": "hard",
+          "question": "What is the license of Java binaries?",
+          "correct_answer": "GPLv2",
+            "incorrect_answers": [
+              "Apache 2.0",
+              "MIT",
+              "Commercial License"
+            ]
+          },
+          {
+            "category": "Azure",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which one(s) of these Azure solutions can you use to deploy containers?",
+            "correct_answer": "All off above",
+              "incorrect_answers": [
+                "Azure Container Instances",
+                "Azure Kubernetes Service",
+                "Azure Container Apps"
+              ]
+            },
+          {
+            "category": "Azure",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which Azure Messaging solution supports JMS?",
+            "correct_answer": "Azure Service Bus",
+              "incorrect_answers": [
+                "Azure Event Grid",
+                "Azure Event Hub",
+                "Azure Queue Storage"
+              ]
+            }
+    ]
+    const questions = qs.map((question) =>
+    ({
+      ...question,
+      answers: [
+        question.correct_answer,
+        ...question.incorrect_answers,
+      ].sort(() => Math.random() - 0.5),
+    }))
+    setQuestions(questions);
   }, []);
 
   //handling answer: showing the correct answer & update the earn
@@ -119,7 +159,6 @@ function App() {
           <h1>Welcome to the Devoxx 2022 <br/>  Microsoft Quiz</h1>
         </header>
         <Start setUsername={setUserName} />
-        <img src="./asset/msft-logo.svg"/>
       </div>
     ) : (
 
@@ -175,26 +214,6 @@ function App() {
 
                     </div>
 
-                    <div className="change">
-
-                      <Change
-                        changeUsed={changeUsed}
-                        setChangeUsed={setChangeUsed}
-                        handleNextQuestion={handleNextQuestion}
-                      />
-
-                    </div>
-
-                    <div className="double">
-
-                      <DoubleTime
-                        doubleTimeUsed={doubleTimeUsed}
-                        setDoubleTimeUsed={setDoubleTimeUsed}
-                        timer={timer}
-                        setTimer={setTimer}
-                      />
-
-                    </div>
 
                   </div>
 
@@ -245,6 +264,8 @@ function App() {
 
 
                 ))}
+
+                <div className="yourpoints">Your points ★ {earn}</div>
 
               </div>
 
