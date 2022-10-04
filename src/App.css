@@ -313,19 +313,88 @@ header {
   }
 }
 
+.answer-table {
+  overflow: overlay;
+  display: table;
+  height: 450px;
+  padding-bottom: 80px;
+}
+
+.answer-table .header{
+  padding: 60px 0 60px 0;
+  background-color: white;
+  display: table;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.answer-table .header h1,
+.answer-table .header h2 {
+  color: black;
+}
+
+.answer-table .header button {  
+  background:#008ad7;;
+  color: white;
+}
+
+
+.row-answers {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.td-answers {
+  width: 250px;
+}
+
+.td-answers span { 
+  padding: 7px 10px;
+}
+
+.td-answers .selected{
+  background: white;
+  color: black;
+  border-radius: 7px;
+}
+
+.td-answers .selected.correct{
+  background-color: green;
+}
+.td-answers .selected.not-correct{
+  background-color: red;
+}
+
 .timesup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  justify-content: center;
 }
 
+.timesup h1 {  
+  width: auto;
+}
+
+.timesup h2 {  
+  font-size: 80px;
+}
+
+.timesup h2 span {  
+  color: #008ad7;
+}
+
+.timesup button {  
+  background: white;
+  color: black;;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 300px;
+  margin-top: 30px;
+}
 
 
 

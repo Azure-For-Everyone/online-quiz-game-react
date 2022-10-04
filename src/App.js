@@ -24,6 +24,8 @@ function App() {
   //tracking question number, current array and currIndex of question 
   //from fatched questions's array
   const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState([]);
+  
   const [currIndex, setCurrIndex] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(1);
 
@@ -63,23 +65,6 @@ function App() {
   );
 
 
-  const pointsPyramid = useMemo(
-    () =>
-      [
-        { id: 1, amount: 0 },
-        { id: 2, amount: 0 },
-        { id: 3, amount: 0 },
-        { id: 4, amount: 0 },
-        { id: 5, amount: 0 },
-        { id: 6, amount: 0 },
-        { id: 7, amount: 0 },
-        { id: 8, amount: 0 },
-        { id: 9, amount: 0 },
-        { id: 10, amount: 0 },
-
-      ].reverse(),
-    []
-  );
 
 
   //Fetching the questions's API, Creating current question array and mix it
@@ -98,13 +83,27 @@ function App() {
 
   //handling answer: showing the correct answer & update the earn
   const handleAnswer = (answer) => {
+
+
+   const response = {
+    id: currIndex,
+    question: questions[currIndex],
+    answer,
+    points: 0,
+   }
+
+
+
     //check for the answer
     if (answer === questions[currIndex].correct_answer) {
       //updating earn
       //need to decide how to end the game and update the earn calc
       setEarn(timer * 10 + earn);
+      response.points = timer * 10
     }
 
+    const newAnswers = [...answers, response]
+    setAnswers(newAnswers);
     handleNextQuestion(true);
 
   };
@@ -137,7 +136,7 @@ function App() {
       questions.length > 0 ? (
 
         // Main app div
-        <div className="app vh-100">
+        <div className="app">
 
           <>
 
@@ -145,7 +144,44 @@ function App() {
             <div className="main col-9">
               {gameOver ? (
 
-                <h1>Game over! <br /> <span className="big">{userName}</span> earn: ★ {earn} in total !</h1>
+                <div className="answer-table">
+                  <div className="timesup">
+
+                      <div className="header">
+                        <h1>You did great!</h1>
+                        <h2><span>★ {earn}</span></h2>
+                        <button>Go to leaderboard</button>
+                      </div>
+
+                      <div className="answer-table">
+                        { answers.map((a, idx) => {
+                            
+                            const qAnsers = [ ...a.question.incorrect_answers, a.question.correct_answer]
+
+                            return <div>
+                              {a.question.question}
+                              <div className="row-answers"> {
+                                qAnsers.map((qa, id)  => {
+
+                                  const isCorrect = a.answer === a.question.correct_answer
+                                  const isCurrentAnswer = qa === a.answer
+
+                                  return <div className="td-answers">
+                                    
+                                    { isCorrect && isCurrentAnswer && <span className='selected correct'>{qa}</span> }
+                                    { !isCorrect && isCurrentAnswer && <span className='selected not-correct'>{qa}</span> }
+                                    { !isCurrentAnswer && <span>{qa}</span> }
+                                    
+                                  </div>
+                                })}
+                                </div>
+                                { (idx < answers.length-1) && <div><hr/><br/></div> }
+                            </div>
+                            })
+                        }
+                      </div>
+                  </div>
+                </div>
 
               ) : timeOut ? (
 
@@ -161,6 +197,7 @@ function App() {
                 <Timesup
                   userName={userName}
                   setTimeOut={setTimeOut}
+                  setTimer={setTimer}
                   timeOut={timeOut}
                   setGameOver={setGameOver}
                   questionNumber={questionNumber}
@@ -236,7 +273,7 @@ function App() {
                     </div> }
 
                     { questionNumber > m.id && <div className="moneyListItemAmount col-9 d-flex align-items-center">
-                      ★ { m.amount }
+                      ★ { answers[m.id-1] ? answers[m.id-1].points : 0 }
                     </div> }
 
                   </div> 
