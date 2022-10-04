@@ -7,16 +7,18 @@ import Change from "./components/Change";
 import Start from "./components/Start";
 import Timesup from "./components/Timesup";
 import DoubleTime from "./components/DoubleTime";
+import questionsDevoxx from "./components/QuestionsDevoxx";
 
 const apiUrl = "https://opentdb.com/api.php?amount=100";
 
-const myName = "Tomer Vardi";
+const myName = "Microsoft";
 let currentYear = new Date().getFullYear();
 
 function App() {
 
   //tracking if the user registered or not => if not -> showing welcome screen
   const [userName, setUserName] = useState(null);
+  const [email, setEmail] = useState(null);
 
 
   //tracking question number, current array and currIndex of question 
@@ -31,7 +33,7 @@ function App() {
   const [earn, setEarn] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [timeOut, setTimeOut] = useState(false);
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(60);
 
 
 
@@ -45,73 +47,44 @@ function App() {
   const moneyPyramid = useMemo(
     () =>
       [
-        { id: 1, amount: 10 },
-        { id: 2, amount: 10 },
-        { id: 3, amount: 10 },
-        { id: 4, amount: 10 },
-        { id: 5, amount: 10 },
-        { id: 6, amount: 10 },
-        { id: 7, amount: 10 },
-        { id: 8, amount: 10 },
-        { id: 9, amount: 10 },
-        { id: 10, amount: 10 },
+        { id: 1, amount: 60 * 10 },
+        { id: 2, amount: 60 * 10 },
+        { id: 3, amount: 60 * 10 },
+        { id: 4, amount: 60 * 10 },
+        { id: 5, amount: 60 * 10 },
+        { id: 6, amount: 60 * 10 },
+        { id: 7, amount: 60 * 10 },
+        { id: 8, amount: 60 * 10 },
+        { id: 9, amount: 60 * 10 },
+        { id: 10, amount: 60 * 10 },
 
       ].reverse(),
     []
   );
 
+
+  const pointsPyramid = useMemo(
+    () =>
+      [
+        { id: 1, amount: 0 },
+        { id: 2, amount: 0 },
+        { id: 3, amount: 0 },
+        { id: 4, amount: 0 },
+        { id: 5, amount: 0 },
+        { id: 6, amount: 0 },
+        { id: 7, amount: 0 },
+        { id: 8, amount: 0 },
+        { id: 9, amount: 0 },
+        { id: 10, amount: 0 },
+
+      ].reverse(),
+    []
+  );
+
+
   //Fetching the questions's API, Creating current question array and mix it
   useEffect(() => {
-    const qs = [
-      {
-        "category": "Azure",
-        "type": "multiple",
-        "difficulty": "hard",
-        "question": "Where can I deploy my Maven-packaged Spring Boot application?",
-        "correct_answer": "All off above",
-          "incorrect_answers": [
-            "App Service",
-            "VM",
-            "Spring Cloud"
-          ]
-        },
-        {
-          "category": "Azure",
-          "type": "multiple",
-          "difficulty": "hard",
-          "question": "What is the license of Java binaries?",
-          "correct_answer": "GPLv2",
-            "incorrect_answers": [
-              "Apache 2.0",
-              "MIT",
-              "Commercial License"
-            ]
-          },
-          {
-            "category": "Azure",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "Which one(s) of these Azure solutions can you use to deploy containers?",
-            "correct_answer": "All off above",
-              "incorrect_answers": [
-                "Azure Container Instances",
-                "Azure Kubernetes Service",
-                "Azure Container Apps"
-              ]
-            },
-          {
-            "category": "Azure",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "Which Azure Messaging solution supports JMS?",
-            "correct_answer": "Azure Service Bus",
-              "incorrect_answers": [
-                "Azure Event Grid",
-                "Azure Event Hub",
-                "Azure Queue Storage"
-              ]
-            }
-    ]
+    const qs = questionsDevoxx;
     const questions = qs.map((question) =>
     ({
       ...question,
@@ -129,7 +102,7 @@ function App() {
     if (answer === questions[currIndex].correct_answer) {
       //updating earn
       //need to decide how to end the game and update the earn calc
-      setEarn(moneyPyramid[10 - questionNumber].amount + earn);
+      setEarn(timer * 10 + earn);
     }
 
     handleNextQuestion(true);
@@ -148,17 +121,15 @@ function App() {
     setCurrIndex(currIndex + 1);
   }
 
-
-
   //rendering screens and 
-  return !userName ?
+  return !email ?
     (
 
       <div className="startScreen">
         <header>
-          <h1>Welcome to the Devoxx 2022 <br/>  Microsoft Quiz</h1>
+          <h1>Welcome to the Devoxx 2022 <br/>  Microsoft & Github Quiz</h1>
         </header>
-        <Start setUsername={setUserName} />
+        <Start setUsername={setUserName} setEmail={setEmail} />
       </div>
     ) : (
 
@@ -238,12 +209,13 @@ function App() {
             <div className="pyramid col-3">
 
               <div className="moneyList vh-100">
-                {moneyPyramid.map((m, idx) => (
-                  <div
+              {moneyPyramid.map((m, idx) => (
+                 
+                 <div
                     className={
                       questionNumber === m.id
                         ? "moneyListItem active row"
-                        : "moneyListItem row"
+                        : (questionNumber < m.id) ? "moneyListItem row" : "moneyListItem row answered"
                     }
                     key={idx}
                   >
@@ -255,15 +227,21 @@ function App() {
                       {m.id}
                     </div>
 
-                    <div className="moneyListItemAmount col-9 d-flex align-items-center">
-                      ★ {m.amount}
-                    </div>
+                    { questionNumber === m.id && <div className="moneyListItemAmount col-9 d-flex align-items-center">
+                      ★ { questionNumber === m.id ? timer * 10 : m.amount}
+                    </div> }
 
-                  </div>
+                    { questionNumber < m.id && <div className="moneyListItemAmount col-9 d-flex align-items-center">
+                      ★ { m.amount }
+                    </div> }
 
+                    { questionNumber > m.id && <div className="moneyListItemAmount col-9 d-flex align-items-center">
+                      ★ { m.amount }
+                    </div> }
 
-
+                  </div> 
                 ))}
+                
 
                 <div className="yourpoints">Your points ★ {earn}</div>
 

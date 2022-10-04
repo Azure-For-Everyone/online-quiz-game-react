@@ -51,6 +51,10 @@ header {
   position: absolute;
 }
 
+.answered {
+  opacity: 0.25;
+}
+
 .startScreen {
   position: relative;
   height: 100vh;
@@ -65,6 +69,10 @@ header {
   align-items: center;
   justify-content: space-around;
   position: relative;
+}
+
+.startScreen input {
+  margin-top:  10px;
 }
 
 .startScreen:before {
@@ -93,7 +101,7 @@ header {
 
 
 .pyramid {
-  background: #5B5FC7;
+  background: #008ad7;
 }
 
 .yourpoints {
@@ -113,15 +121,16 @@ header {
 }
 
 .moneyListItem {
-  padding: 5px;
+  padding: 8px 5px;
+  margin: 5px 0;
   border-radius: 5px;
-  border-style: groove;
-  border-color: aliceblue;
+  border-color: white;
   border-width: medium;
 }
 
 .moneyListItem.active {
-  background-color: #252aae;
+  background-color: white;
+  color: #008ad7;
 }
 
 .moneyListItemNumber {
@@ -219,7 +228,7 @@ header {
 
 .question {
   width: 80%;
-  background: #5B5FC7;
+  background: #008ad7;
   color: white;
   text-align: center;
   padding: 20px;
@@ -242,7 +251,7 @@ header {
   padding: 10px;
   margin: 0 10px 20px 10px;
   text-align: center;
-  background: #5B5FC7;
+  background: #008ad7;
   border: 1px solid white;
   border-radius: 15px;
   font-weight: 300;
@@ -253,7 +262,7 @@ header {
 
 .answer:hover,
 .answer.active {
-  background: mediumblue;
+  background: #008ad7;
 }
 
 .answer.correct {
@@ -265,7 +274,7 @@ header {
   0%,
   22%,
   42% {
-    background: mediumblue;
+    background: #008ad7;
   }
 
   20%,
@@ -289,7 +298,7 @@ header {
   0%,
   22%,
   42% {
-    background: mediumblue;
+    background: #008ad7;
   }
 
   10%,
@@ -316,6 +325,8 @@ header {
   right: 0;
   margin: auto;
 }
+
+
 
 
 .start {
@@ -352,7 +363,7 @@ header {
 
 .startButton {
   width: 100%;
-  background: #5B5FC7;
+  background: #008ad7;
   box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.32), 0px 1.6px 3.6px rgba(0, 0, 0, 0.28);
   border-radius: 4px;
   border: none;

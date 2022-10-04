@@ -2,11 +2,13 @@ import { useRef } from "react";
 
 
 
-export default function Start({ setUsername }) {
-  const inputRef = useRef();
+export default function Start({ setUsername, setEmail }) {
+  const inputRefUsername = useRef();
+  const inputRefEmail = useRef();
 
   const handleClick = () => {
-    inputRef.current.value && setUsername(inputRef.current.value);
+    inputRefUsername.current.value && setUsername(inputRefUsername.current.value);
+    inputRefEmail.current.value && setEmail(inputRefEmail.current.value);
   };
 
   return (
@@ -14,8 +16,13 @@ export default function Start({ setUsername }) {
       
       <input
         className="startInput"
-        placeholder="Please provide your full name"
-        ref={inputRef}
+        placeholder="Your full name or nickname"
+        ref={inputRefUsername}
+      />
+      <input
+        className="startInput"
+        placeholder="Your email address"
+        ref={inputRefEmail}
       />
       <button className="startButton btn btn-outline-light" onClick={handleClick}>
         Let's go!
