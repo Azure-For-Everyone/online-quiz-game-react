@@ -375,12 +375,19 @@ header {
   justify-content: center;
 }
 
+.run-out-of-time {
+  padding: 80px 0;
+}
 .timesup h1 {  
   width: auto;
 }
 
 .timesup h2 {  
   font-size: 80px;
+}
+
+.timesup h3 {  
+  font-size: 40px;
 }
 
 .timesup h2 span {  
