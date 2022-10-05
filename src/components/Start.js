@@ -14,19 +14,21 @@ export default function Start({ setUsername, setEmail }) {
   return (
     <div className="start">
       
-      <input
-        className="startInput"
-        placeholder="Your full name or nickname"
-        ref={inputRefUsername}
-      />
-      <input
-        className="startInput"
-        placeholder="Your email address"
-        ref={inputRefEmail}
-      />
-      <button className="startButton btn btn-outline-light" onClick={handleClick}>
-        Let's go!
-      </button>
+      <div className="form-register">
+        <input
+          className="startInput"
+          placeholder="Your full name or nickname"
+          ref={inputRefUsername}
+        />
+        <input
+          className="startInput"
+          placeholder="Your email address"
+          ref={inputRefEmail}
+        />
+        <button className="startButton" onClick={handleClick}>
+          Let's go!
+        </button>
+      </div>
     </div>
   );
 }

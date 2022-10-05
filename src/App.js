@@ -8,6 +8,7 @@ import Start from "./components/Start";
 import Timesup from "./components/Timesup";
 import DoubleTime from "./components/DoubleTime";
 import questionsDevoxx from "./components/QuestionsDevoxx";
+import Leaderboard from "./components/Leaderboard";
 
 const apiUrl = "https://opentdb.com/api.php?amount=100";
 
@@ -36,8 +37,18 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [timeOut, setTimeOut] = useState(false);
   const [timer, setTimer] = useState(60);
+  const [page, setPage] = useState("leaderboard");
 
-
+  const [leaderboard, setLeaderboard] = useState([
+    {name: "Cedric", score: 550},
+    {name: "Joris", score: 4200},
+    {name: "Dorien", score: 2000},
+    {name: "Amandine", score: 5400},
+    {name: "Patrick", score: 3200},
+    {name: "Nico", score: 3600},
+    {name: "Tim", score: 3200},
+    {name: "Leen", score: 3200}
+  ]);
 
   // Timer and Life_Lines
   const [doubleTimeUsed, setDoubleTimeUsed] = useState(false);
@@ -120,13 +131,27 @@ function App() {
     setCurrIndex(currIndex + 1);
   }
 
+
+  //change page
+  const playGame = () => {
+    setPage("game");
+  }
+  const showLeaderboard = () => {
+    setPage("leaderboard");
+  }
+  
+  
   //rendering screens and 
-  return !email ?
+  return page === "leaderboard" ? <div className="leaderScreen">
+      <Leaderboard users={leaderboard} playGame={playGame} paginate={1000}/>
+    </div> : ( !email ?
     (
 
       <div className="startScreen">
         <header>
-          <h1>Welcome to the Devoxx 2022 <br/>  Microsoft & Github Quiz</h1>
+      <h1>Test your knowledge<br/>Win in a Surface Pro 8</h1>
+
+                        <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
       </div>
@@ -150,7 +175,7 @@ function App() {
                       <div className="header">
                         <h1>You did great!</h1>
                         <h2><span>★ {earn}</span></h2>
-                        <button>Go to leaderboard</button>
+                        <button onClick={showLeaderboard}>🏆 Go to leaderboard</button>
                       </div>
 
                       <div className="answer-table">
@@ -294,7 +319,7 @@ function App() {
         <h2 className='big'>Loading...</h2>
       )//questions.length > 0 ?
 
-    );//return
+    ));//return
 
 }//function App
 

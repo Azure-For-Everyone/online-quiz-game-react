@@ -62,7 +62,7 @@ header {
   color: white;
   /*background-color: #020230;*/
   background-image: url(./asset/java-bg.png);
-  background-size: cover;
+  background-size: auto;
   padding: 2%;
   display: flex;
   flex-direction: column;
@@ -71,11 +71,22 @@ header {
   position: relative;
 }
 
+.leaderScreen {
+  padding-top: px;
+  position: relative;
+  height: 100%;
+  color: white;
+  /*background-color: #020230;*/
+  background-image: url(./asset/java-bg.png);
+  background-size: auto;
+  display: flex;
+}
+
 .startScreen input {
   margin-top:  10px;
 }
 
-.startScreen:before {
+.startScreen:before,.leaderScreen:before {
   content: '';
   position: absolute;
   top: 0;
@@ -84,6 +95,111 @@ header {
   left: 0;
   background-image: linear-gradient(to bottom right,black,black);
   opacity: .85; 
+}
+
+#lBoard {
+  width: 100%;
+  position: relative;
+  display: table;
+  background: white;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+#lBoard tr td {
+  padding: 10px 20px;
+  color: black;
+}
+
+.rank-header {
+  font-weight: bold;
+}
+
+.leaderboard .input-form {
+  padding: 15px 0;
+}
+
+.leaderboard .input-form input {
+  outline: none;
+}
+
+.leaderboard h1 {
+  max-width: 1200px;
+  margin-top: 120px;
+}
+
+.leaderboard button, 
+.answer-table button {
+  background:#008ad7;;
+  color: white;
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 7px;
+  margin: 0 auto;
+  display: flex;
+  border: 8px solid white;
+  margin-bottom: 50px;
+}
+
+.startScreen .go-to {  
+  margin-bottom: 0px;
+  background:#008ad7;;
+  color: white;
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 7px;
+  margin: 0 auto;
+  display: flex;
+  border: 8px solid white;
+  margin-bottom: 150px;
+}
+
+
+tr.row-attendee:nth-child(even) {background: #f3f3f3}
+
+tr.row-attendee td {
+  padding: 10px;
+}
+
+.leaderboard-table {
+  margin: 20px auto;
+  display: table;
+  width: 1000px;  
+  border: 10px solid #ccc;
+  border-radius: 20px;
+  z-index: 9999;
+  position: relative;
+  padding: 25px;
+  background: white
+}
+
+.score {
+  text-align: right;
+}
+
+.leaderboard {
+  width: 100%;
+  padding: 0 50px;
+}
+
+.leaderboard h1 {
+  width: 100%;
+}
+
+.form-register {
+  display: table;
+  background-color: white;
+  padding: 50px;
+  margin-top: 280px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.form-register input {
+  border-bottom:  2px solid #ededed;
+  border-radius: 0;
 }
 
 .app {
@@ -318,6 +434,7 @@ header {
   display: table;
   height: 450px;
   padding-bottom: 80px;
+  background: #2e2e2e;
 }
 
 .answer-table .header{
@@ -338,6 +455,7 @@ header {
   background:#008ad7;;
   color: white;
 }
+
 
 
 .row-answers {
@@ -440,9 +558,8 @@ header {
 .startButton {
   width: 100%;
   background: #008ad7;
-  box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.32), 0px 1.6px 3.6px rgba(0, 0, 0, 0.28);
   border-radius: 4px;
   border: none;
   padding: 10px 12px;
-  margin: 10px 0 0 0;
+  margin: 40px 0 0 0;
 }
