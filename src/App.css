@@ -454,6 +454,8 @@ tr.row-attendee td {
 .answer-table .header button {  
   background:#008ad7;;
   color: white;
+  width: auto;
+  padding: 15px 20px;
 }
 
 

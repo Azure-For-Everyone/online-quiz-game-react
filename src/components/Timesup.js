@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Timesup({ userName, setTimeOut, setTimer, handleNextQuestion, questionNumber, setGameOver }) {
+export default function Timesup({ userName, setTimeOut, setTimer, handleAnswer, handleNextQuestion, questionNumber, setGameOver }) {
 
     const handleClick = () => {
         if (questionNumber === 10) {
@@ -9,7 +9,7 @@ export default function Timesup({ userName, setTimeOut, setTimer, handleNextQues
 
         setTimeOut(false);
         setTimer(60);
-        handleNextQuestion(true);
+        handleAnswer("");
     };
 
     return (

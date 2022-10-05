@@ -36,7 +36,7 @@ function App() {
   const [earn, setEarn] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [timeOut, setTimeOut] = useState(false);
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(30);
   const [page, setPage] = useState("leaderboard");
 
   const [leaderboard, setLeaderboard] = useState([
@@ -60,17 +60,16 @@ function App() {
   const moneyPyramid = useMemo(
     () =>
       [
-        { id: 1, amount: 60 * 10 },
-        { id: 2, amount: 60 * 10 },
-        { id: 3, amount: 60 * 10 },
-        { id: 4, amount: 60 * 10 },
-        { id: 5, amount: 60 * 10 },
-        { id: 6, amount: 60 * 10 },
-        { id: 7, amount: 60 * 10 },
-        { id: 8, amount: 60 * 10 },
-        { id: 9, amount: 60 * 10 },
-        { id: 10, amount: 60 * 10 },
-
+        { id: 1, amount: 30 * 10 },
+        { id: 2, amount: 30 * 10 },
+        { id: 3, amount: 30 * 10 },
+        { id: 4, amount: 30 * 10 },
+        { id: 5, amount: 30 * 10 },
+        { id: 6, amount: 30 * 10 },
+        { id: 7, amount: 30 * 10 },
+        { id: 8, amount: 30 * 10 },
+        { id: 9, amount: 30 * 10 },
+        { id: 10, amount: 30 * 10 },
       ].reverse(),
     []
   );
@@ -95,15 +94,12 @@ function App() {
   //handling answer: showing the correct answer & update the earn
   const handleAnswer = (answer) => {
 
-
    const response = {
     id: currIndex,
     question: questions[currIndex],
     answer,
     points: 0,
    }
-
-
 
     //check for the answer
     if (answer === questions[currIndex].correct_answer) {
@@ -149,7 +145,7 @@ function App() {
 
       <div className="startScreen">
         <header>
-      <h1>Test your knowledge<br/>Win in a Surface Pro 8</h1>
+      <h1>Test your knowledge<br/>Win a Surface Pro 8</h1>
 
                         <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
@@ -225,6 +221,7 @@ function App() {
                   setTimer={setTimer}
                   timeOut={timeOut}
                   setGameOver={setGameOver}
+                  handleAnswer={handleAnswer}
                   questionNumber={questionNumber}
                   handleNextQuestion={handleNextQuestion}
                 />

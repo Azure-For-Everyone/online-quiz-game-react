@@ -47,6 +47,12 @@ class Leaderboard extends Component {
      * @param {Object, Object} user
   */
   compareScore(a,b) {
+    if (a.score === b.score) {
+      if (a.name < b.name)
+        return 1;
+      if (a.name > b.name)
+        return -1;
+    }
     if (a.score < b.score)
       return -1;
     if (a.score > b.score)
@@ -167,9 +173,9 @@ class Leaderboard extends Component {
   render() {
     return (
       <div className='leaderboard'>
-      <h1>Test your knowledge<br/>Win in a Surface Pro 8</h1>
+      <h1>Test your knowledge<br/>Win a Surface Pro 8</h1>
 
-      <button onClick={this.props.playGame}>🚀 Test your knowdlege</button>
+      <button onClick={this.props.playGame}>🚀 Test your knowledge</button>
         <h2>Leaderboard</h2>
         <div className='leaderboard-table'>
           <table id="lBoard">
