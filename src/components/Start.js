@@ -1,10 +1,12 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 
 
 export default function Start({ setUsername, setEmail }) {
   const inputRefUsername = useRef();
   const inputRefEmail = useRef();
+
+  const [errorEmail, setErrorEmail] = useState(false);
 
   const validateEmail = (email) => {
     return email.match(
@@ -19,6 +21,9 @@ export default function Start({ setUsername, setEmail }) {
     if(validateEmail(email)){
       username && setUsername(inputRefUsername.current.value);
       email && setEmail(inputRefEmail.current.value);
+      setErrorEmail(false);
+    } else {
+      setErrorEmail(true);
     }
   };
 
@@ -36,7 +41,7 @@ export default function Start({ setUsername, setEmail }) {
           ref={inputRefUsername}
         />
         <input
-          className="startInput"
+          className={errorEmail ? "startInput error" : "startInput"}
           type="email"
           minlength="3" 
           required

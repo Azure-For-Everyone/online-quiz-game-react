@@ -110,6 +110,10 @@ header {
   font-weight: bold;
 }
 
+.form-register .error {
+  border-bottom: 2px solid red !important;
+}
+
 .leaderboard .input-form {
   padding: 15px 0;
 }
