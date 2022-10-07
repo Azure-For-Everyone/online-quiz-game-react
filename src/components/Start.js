@@ -6,10 +6,23 @@ export default function Start({ setUsername, setEmail }) {
   const inputRefUsername = useRef();
   const inputRefEmail = useRef();
 
-  const handleClick = () => {
-    inputRefUsername.current.value && setUsername(inputRefUsername.current.value);
-    inputRefEmail.current.value && setEmail(inputRefEmail.current.value);
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
   };
+  
+
+  const handleClick = () => {
+    const username = inputRefUsername.current.value;
+    const email = inputRefEmail.current.value;
+    if(validateEmail(email)){
+      username && setUsername(inputRefUsername.current.value);
+      email && setEmail(inputRefEmail.current.value);
+    }
+  };
+
+  
 
   return (
     <div className="start">
@@ -17,11 +30,16 @@ export default function Start({ setUsername, setEmail }) {
       <div className="form-register">
         <input
           className="startInput"
+          minlength="3" 
+          required
           placeholder="Your full name or nickname"
           ref={inputRefUsername}
         />
         <input
           className="startInput"
+          type="email"
+          minlength="3" 
+          required
           placeholder="Your email address"
           ref={inputRefEmail}
         />

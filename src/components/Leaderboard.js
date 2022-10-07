@@ -34,11 +34,30 @@ class Leaderboard extends Component {
   componentDidMount() {
     const ranking = this.state.users;
     const paginate = this.props.paginate;
-    ranking.sort(this.compareScore).reverse();
-    ranking.map((user, index) => user.rank = index +1);
-    ranking.map((user, index) => user.page = Math.ceil((index+1)/paginate));
-    this.setState({ pageMax: ranking[ranking.length - 1].page})
-    this.setState({ ranking: ranking});
+    if(ranking && ranking.length > 0) {
+      ranking.sort(this.compareScore).reverse();
+      ranking.map((user, index) => user.rank = index +1);
+      ranking.map((user, index) => user.page = Math.ceil((index+1)/paginate));
+      this.setState({ pageMax: ranking[ranking.length - 1].page})
+      this.setState({ ranking: ranking});
+    }
+  }
+
+  componentDidUpdate(prevProps){
+    if(this.props.users != prevProps.users) {
+      this.setState({
+        users: this.props.users,
+      });
+      const ranking = this.props.users;
+      const paginate = this.props.paginate;
+      if(ranking && ranking.length > 0) {
+        ranking.sort(this.compareScore).reverse();
+        ranking.map((user, index) => user.rank = index +1);
+        ranking.map((user, index) => user.page = Math.ceil((index+1)/paginate));
+        this.setState({ pageMax: ranking[ranking.length - 1].page})
+        this.setState({ ranking: ranking});
+      }
+    }
   }
 
   /**
@@ -172,11 +191,10 @@ class Leaderboard extends Component {
   */
   render() {
     return (
-      <div className='leaderboard'>
-      <h1>Test your knowledge<br/>Win a Surface Pro 8</h1>
+      <div className='leaderboard' style={{"background-image": "url(./"+this.props.event+"-bg.png)"}}>
+      <h1>Test your knowledge<br/>Win a Surface device</h1>
 
       <button onClick={this.props.playGame}>🚀 Test your knowledge</button>
-        <h2>Leaderboard</h2>
         <div className='leaderboard-table'>
           <table id="lBoard">
             <tbody className='ranking'>
@@ -194,6 +212,14 @@ class Leaderboard extends Component {
                 <td className='rank-header sortAlpha' onClick={ this.sortUsersByName }> Name </td>
                 <td className='rank-header score' onClick={ this.sortUsersByScore }> Score </td>
               </tr>
+
+              { this.state.ranking && this.state.ranking.length == 0 && <tr>
+                  <td>You are the first player!</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              }
+
               {
               this.state.ranking.map((user, index) => {
                 return <tr className="ranking row-attendee" key={index}>

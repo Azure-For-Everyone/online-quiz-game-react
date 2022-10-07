@@ -2,17 +2,18 @@
 import {createRoot} from 'react-dom/client';
 import App from './App';
 import React from "react";
-
-
-
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
   // <StrictMode>
-    <App />
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/:event" element={<App />} />
+    </Routes>
+  </BrowserRouter>
   // </StrictMode>,
 );
 

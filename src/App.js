@@ -1,21 +1,31 @@
 import "./App.css";
 import React from "react";
+import {
+  useParams
+} from 'react-router-dom'
 import { useEffect, useState, useMemo } from 'react';
 import { Questionnaire } from './components';
 import Timer from "./components/Timer";
-import Change from "./components/Change";
 import Start from "./components/Start";
 import Timesup from "./components/Timesup";
-import DoubleTime from "./components/DoubleTime";
 import questionsDevoxx from "./components/QuestionsDevoxx";
+import questionsMicrosoft from "./components/QuestionsMicrosoft";
+import questionsDatamindsConnect from "./components/QuestionsDatamindsConnect";
 import Leaderboard from "./components/Leaderboard";
 
-const apiUrl = "https://opentdb.com/api.php?amount=100";
-
+const apiUrl = "https://msft-quiz-api.azurewebsites.net";
 const myName = "Microsoft";
+
 let currentYear = new Date().getFullYear();
 
 function App() {
+
+  const params = useParams();
+  let theme = "microsoft"
+  if(params && params.event && params.event !== "") {
+    const { event } = params
+    theme = event;
+  }
 
   //tracking if the user registered or not => if not -> showing welcome screen
   const [userName, setUserName] = useState(null);
@@ -39,16 +49,27 @@ function App() {
   const [timer, setTimer] = useState(30);
   const [page, setPage] = useState("leaderboard");
 
-  const [leaderboard, setLeaderboard] = useState([
-    {name: "Cedric", score: 550},
-    {name: "Joris", score: 4200},
-    {name: "Dorien", score: 2000},
-    {name: "Amandine", score: 5400},
-    {name: "Patrick", score: 3200},
-    {name: "Nico", score: 3600},
-    {name: "Tim", score: 3200},
-    {name: "Leen", score: 3200}
-  ]);
+
+
+  const [leaderboard, setLeaderboard] = useState([]);
+  //Fetching the questions's API, Creating current question array and mix it
+  useEffect(() => {
+    fetch(apiUrl + "/leaderboard/" + theme)
+    .then((res) => res.json())
+    .then((data) => {
+      if(data && data.leaderboard) {
+        const players = data.leaderboard.map(u => {
+          return {
+            name: u.username,
+            score: u.score,
+            page: 1,
+          }
+        })
+        setLeaderboard(players);
+      }
+    });
+  }, []);
+
 
   // Timer and Life_Lines
   const [doubleTimeUsed, setDoubleTimeUsed] = useState(false);
@@ -73,13 +94,18 @@ function App() {
       ].reverse(),
     []
   );
+  
 
 
 
-
-  //Fetching the questions's API, Creating current question array and mix it
   useEffect(() => {
-    const qs = questionsDevoxx;
+    let qs = questionsMicrosoft
+    if(theme === 'devoxx') {
+      qs = questionsDevoxx;
+    } else if (theme === 'datamindsconnect'){
+      qs = questionsDatamindsConnect
+    }
+
     const questions = qs.map((question) =>
     ({
       ...question,
@@ -87,9 +113,10 @@ function App() {
         question.correct_answer,
         ...question.incorrect_answers,
       ].sort(() => Math.random() - 0.5),
-    }))
+    })).sort(() => Math.random() - 0.5)
     setQuestions(questions);
   }, []);
+
 
   //handling answer: showing the correct answer & update the earn
   const handleAnswer = (answer) => {
@@ -115,10 +142,35 @@ function App() {
 
   };
 
-  //lunching next question and stop showing corrrect answer
+  //launching next question and stop showing corrrect answer
   const handleNextQuestion = (changeQuestion) => {
     if (questionNumber === 10) {
       setGameOver(true);
+
+      // Send answers to API!
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          username: userName,
+          email: email, 
+          score: earn, 
+        })
+      };
+      fetch(apiUrl + "/leaderboard/" + theme, requestOptions)
+          .then(response => response.json())
+          .then(data => {
+            if(data && data.leaderboard) {
+              const players = data.leaderboard.map(u => {
+                return {
+                  name: u.username,
+                  score: u.score,
+                  page: 1,
+                }
+              })
+              setLeaderboard(players);
+            }
+        })
     }
     if (changeQuestion) {
       setQuestionNumber(questionNumber + 1);
@@ -136,18 +188,17 @@ function App() {
     setPage("leaderboard");
   }
   
-  
   //rendering screens and 
   return page === "leaderboard" ? <div className="leaderScreen">
-      <Leaderboard users={leaderboard} playGame={playGame} paginate={1000}/>
+    <Leaderboard users={leaderboard} event={theme} playGame={playGame} paginate={1000}/> 
+
     </div> : ( !email ?
     (
 
-      <div className="startScreen">
+      <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)"}}>
         <header>
-      <h1>Test your knowledge<br/>Win a Surface Pro 8</h1>
-
-                        <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
+          <h1>Test your knowledge<br/>Win a Surface device</h1>
+          <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
       </div>
@@ -162,7 +213,7 @@ function App() {
           <>
 
             {/* Main (Left) container: Top & Bottom containers, and if game is over => Over container  */}
-            <div className="main col-9">
+            <div className="main col-9" style={{"background": "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #19191f), url(./"+theme+"-bg.png) center"}}>
               {gameOver ? (
 
                 <div className="answer-table">
