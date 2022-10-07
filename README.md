@@ -1,30 +1,28 @@
-# QUIZ TIME - A WEB TRIVIA GAME
-is a web app based on Reactjs as front end with ant design as React UI library, and deployed on netlify
+# Quiz game
+This is a quiz game with a leaderboard. The idea is that question are answered within a predefined time, the longer it takes to answer the less points you can earn. Faulty answers do not get any points.
 
-## Demo
-https://quiz-time-game.netlify.app/
+Once finished your score will be shown on the leaderboard.
 
-### UI 
-screen shots from the app:
+## UI 
 
-(1) Welcome Screen:
-![image](https://user-images.githubusercontent.com/79985779/162590585-7bb478ca-4e8f-41cd-adf9-4235384b18bd.png)
+### Leaderboard:
+The leader board will show the ranking of all players.
+![image](./assets/leaderboard.png)
 
-(2) Main Screen:
-![image](https://user-images.githubusercontent.com/79985779/162590607-399c91cb-befa-4b51-bb6b-b5cf714eff6d.png)
+### Quiz and questions:
+A user has to answer 10 random questions, the faster he answers the more points he will be granted for a correct answer.
+![image](./assets/questions.png)
 
-(3) Time's Up screen:
-![image](https://user-images.githubusercontent.com/79985779/162590687-13c3ae25-b10f-4c9f-818c-e3c329349da6.png)
+### Overview page
+On the overview page you are able to review your answers.
+![image](./assets/overview.png)
 
-#### How to develop it
-1. Clone on your local machine by using https://github.com/varditomer/online-quiz-game-react
+## Develop
+
+1. Clone on your local machine by using https://github.com/azure-for-everyone/online-quiz-game-react
 2. Navigate into the main directory
-3. Run npm install to install node modules
-5. Run npm start to run it locally then will open automatclly on your browser on localhost:3000 port
-
-##### Have Fun!!!
-
-
+3. Run `yarn` to install node modules
+4. Run `yarn start` to run it locally then will open automatclly on your browser on localhost:3000 port
 
 
 
