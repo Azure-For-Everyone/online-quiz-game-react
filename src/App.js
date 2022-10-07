@@ -171,12 +171,17 @@ function App() {
               setLeaderboard(players);
             }
         })
+        setUserName("")
+        setEmail("")
+        setEarn(0)
+        setQuestionNumber(0)
+    } else {
+      if (changeQuestion) {
+        setQuestionNumber(questionNumber + 1);
+      }
+      //show another question
+      setCurrIndex(currIndex + 1);
     }
-    if (changeQuestion) {
-      setQuestionNumber(questionNumber + 1);
-    }
-    //show another question
-    setCurrIndex(currIndex + 1);
   }
 
 
