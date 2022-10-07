@@ -118,9 +118,11 @@ header {
   outline: none;
 }
 
-.leaderboard h1 {
+.leaderboard h1,
+.startScreen h1 {
+  font-size: 67px;
   max-width: 1200px;
-  margin-top: 120px;
+  margin: 120px auto 50px;
 }
 
 .leaderboard button, 
