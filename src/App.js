@@ -208,7 +208,7 @@ function App() {
     </div> : ( !email ?
     (
 
-      <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)"}}>
+      <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "contain"}}>
         <header>
           <h1>Test your knowledge<br/>Win a Surface device</h1>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
@@ -226,7 +226,7 @@ function App() {
           <>
 
             {/* Main (Left) container: Top & Bottom containers, and if game is over => Over container  */}
-            <div className="main col-9" style={{"background": "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #19191f), url(./"+theme+"-bg.png) center"}}>
+            <div className="main col-9" style={{"background": "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #19191f), url(./"+theme+"-bg.png) center", "background-size": "contain"}}>
               {gameOver ? (
 
                 <div className="answer-table">
