@@ -99,6 +99,11 @@ function App() {
 
 
   useEffect(() => {
+    refreshQuestions();
+  }, []);
+
+
+  const refreshQuestions = () => {
     let qs = questionsMicrosoft
     if(theme === 'devoxx') {
       qs = questionsDevoxx;
@@ -115,8 +120,7 @@ function App() {
       ].sort(() => Math.random() - 0.5),
     })).sort(() => Math.random() - 0.5)
     setQuestions(questions);
-  }, []);
-
+  }
 
   //handling answer: showing the correct answer & update the earn
   const handleAnswer = (answer) => {
@@ -138,12 +142,12 @@ function App() {
 
     const newAnswers = [...answers, response]
     setAnswers(newAnswers);
-    handleNextQuestion(true);
+    handleNextQuestion(true, timer * 10 + earn);
 
   };
 
   //launching next question and stop showing corrrect answer
-  const handleNextQuestion = (changeQuestion) => {
+  const handleNextQuestion = (changeQuestion, totalPoints) => {
     if (questionNumber === 10) {
       setGameOver(true);
 
@@ -154,7 +158,7 @@ function App() {
         body: JSON.stringify({ 
           username: userName,
           email: email, 
-          score: earn, 
+          score: totalPoints, 
         })
       };
       fetch(apiUrl + "/leaderboard/" + theme, requestOptions)
@@ -171,10 +175,7 @@ function App() {
               setLeaderboard(players);
             }
         })
-        setUserName("")
-        setEmail("")
-        setEarn(0)
-        setQuestionNumber(0)
+
     } else {
       if (changeQuestion) {
         setQuestionNumber(questionNumber + 1);
@@ -191,6 +192,13 @@ function App() {
   }
   const showLeaderboard = () => {
     setPage("leaderboard");
+    setUserName("")
+    setEmail("")
+    setEarn(0)
+    setQuestionNumber(1)
+    refreshQuestions();
+    setGameOver(false)
+    setTimeOut(false)
   }
   
   //rendering screens and 
