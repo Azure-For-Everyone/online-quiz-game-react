@@ -176,13 +176,12 @@ function App() {
             }
         })
 
-    } else {
-      if (changeQuestion) {
-        setQuestionNumber(questionNumber + 1);
-      }
-      //show another question
-      setCurrIndex(currIndex + 1);
+    } 
+    if (changeQuestion) {
+      setQuestionNumber(questionNumber + 1);
     }
+    //show another question
+    setCurrIndex(currIndex + 1);
   }
 
 
@@ -199,6 +198,7 @@ function App() {
     refreshQuestions();
     setGameOver(false)
     setTimeOut(false)
+    setCurrIndex(0);
   }
   
   //rendering screens and 
