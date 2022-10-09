@@ -195,6 +195,8 @@ function App() {
     setEmail("")
     setEarn(0)
     setQuestionNumber(1)
+    setAnswers([]);
+    setQuestions([]);
     refreshQuestions();
     setGameOver(false)
     setTimeOut(false)
