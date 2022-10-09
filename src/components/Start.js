@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 export default function Start({ setUsername, setEmail }) {
   const inputRefUsername = useRef();
   const inputRefEmail = useRef();
+  const inputRefAgree = useRef();
 
   const [errorEmail, setErrorEmail] = useState(false);
 
@@ -18,7 +19,8 @@ export default function Start({ setUsername, setEmail }) {
   const handleClick = () => {
     const username = inputRefUsername.current.value;
     const email = inputRefEmail.current.value;
-    if(validateEmail(email)){
+    const agree = inputRefAgree.current.checked;
+    if(validateEmail(email) && agree){
       username && setUsername(inputRefUsername.current.value);
       email && setEmail(inputRefEmail.current.value);
       setErrorEmail(false);
@@ -48,6 +50,9 @@ export default function Start({ setUsername, setEmail }) {
           placeholder="Your email address"
           ref={inputRefEmail}
         />
+        <p class="agree">
+          <input type="checkbox" id="agree"  ref={inputRefAgree}/> <label for="agree">My information is solely used for this game purposes (winner announcement). Your personal data (nickname and email address) will be removed after the winner of this game is announced.</label>
+        </p>
         <button className="startButton" onClick={handleClick}>
           Let's go!
         </button>
