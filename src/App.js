@@ -129,7 +129,7 @@ function App() {
     points: 0,
    }
 
-   const currentTime = points;
+   const currentTime = timer;
    const totalScore = currentTime * 10 + earn
     //check for the answer
     if (answer === questions[currIndex].correct_answer) {
