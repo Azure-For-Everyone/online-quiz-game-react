@@ -129,17 +129,18 @@ function App() {
     points: 0,
    }
 
+   const totalScore = timer * 10 + earn
     //check for the answer
     if (answer === questions[currIndex].correct_answer) {
       //updating earn
       //need to decide how to end the game and update the earn calc
-      setEarn(timer * 10 + earn);
+      setEarn(totalScore);
       response.points = timer * 10
     }
 
     const newAnswers = [...answers, response]
     setAnswers(newAnswers);
-    handleNextQuestion(true, earn);
+    handleNextQuestion(true, totalScore);
 
   };
 
