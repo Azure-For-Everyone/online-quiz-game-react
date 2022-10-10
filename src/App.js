@@ -40,7 +40,6 @@ function App() {
   const [currIndex, setCurrIndex] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(1);
 
-
   //tracking current earn and game status => when gameOver = true -> game is end,
   // when time is out => the player need to press btn to continue
   const [earn, setEarn] = useState(0);
@@ -48,8 +47,6 @@ function App() {
   const [timeOut, setTimeOut] = useState(false);
   const [timer, setTimer] = useState(30);
   const [page, setPage] = useState("leaderboard");
-
-
 
   const [leaderboard, setLeaderboard] = useState([]);
   //Fetching the questions's API, Creating current question array and mix it

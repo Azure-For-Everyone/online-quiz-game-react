@@ -185,7 +185,7 @@ export default  [
     "type": "multiple",
     "difficulty": "hard",
     "question": "What CAN'T you do with Power Query?",
-    "correct_answer": "If then else conditions",
+    "correct_answer": "Visualise data",
       "incorrect_answers": [
         "Join and append data from multiple data sources",
         "Import Data from wide range of sources",
