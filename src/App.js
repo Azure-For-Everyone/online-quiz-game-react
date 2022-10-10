@@ -139,7 +139,7 @@ function App() {
 
     const newAnswers = [...answers, response]
     setAnswers(newAnswers);
-    handleNextQuestion(true, timer * 10 + earn);
+    handleNextQuestion(true, earn);
 
   };
 
