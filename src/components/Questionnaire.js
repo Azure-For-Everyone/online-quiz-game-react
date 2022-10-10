@@ -15,9 +15,6 @@ const Questionnaire = ({
     const [correctAnswer] = useSound(correct);
     const [wrongAnswer] = useSound(wrong);
 
-
-
-
     const delay = (duration, callback) => {
         setTimeout(() => {
             callback();
@@ -27,7 +24,7 @@ const Questionnaire = ({
     const handleClick = (answer) => {
         setSelectedAnswer(answer);
         setClassName("answer active");
-        delay(1000, () => {
+        delay(200, () => {
             setClassName(answer === correct_answer ? "answer correct" : "answer wrong");
         });
 
@@ -41,7 +38,7 @@ const Questionnaire = ({
 
             } else {
                 wrongAnswer();
-                delay(2000, () => {
+                delay(200, () => {
                     setSelectedAnswer(null);
                     handleAnswer(answer);
                 });

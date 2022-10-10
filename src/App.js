@@ -122,6 +122,8 @@ function App() {
   //handling answer: showing the correct answer & update the earn
   const handleAnswer = (answer) => {
 
+  console.log("answered!!")
+
    const response = {
     id: currIndex,
     question: questions[currIndex],
@@ -129,14 +131,16 @@ function App() {
     points: 0,
    }
 
-   const currentTime = timer;
-   const totalScore = currentTime * 10 + earn
+   let totalScore = earn
+   let points = timer * 10;
+
     //check for the answer
     if (answer === questions[currIndex].correct_answer) {
       //updating earn
       //need to decide how to end the game and update the earn calc
+      totalScore += points
       setEarn(totalScore);
-      response.points = currentTime * 10
+      response.points = points
     }
 
     const newAnswers = [...answers, response]
