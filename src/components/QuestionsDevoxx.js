@@ -1,6 +1,4 @@
 export default  [
-
-  /* Julien session */
   {
     "category": "Julien",
     "type": "multiple",
@@ -37,8 +35,6 @@ export default  [
         "NaN"
       ]
   },
-
-  /* Chris session */
   {
     "category": "Chris",
     "type": "multiple",

@@ -45,6 +45,7 @@ function App() {
   const [earn, setEarn] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [timeOut, setTimeOut] = useState(false);
+  const [answered, setAnswered] = useState(false);
   const [timer, setTimer] = useState(30);
   const [page, setPage] = useState("leaderboard");
 
@@ -121,8 +122,6 @@ function App() {
 
   //handling answer: showing the correct answer & update the earn
   const handleAnswer = (answer) => {
-
-  console.log("answered!!")
 
    const response = {
     id: currIndex,
@@ -304,6 +303,8 @@ function App() {
                     <div className="timer">
 
                       <Timer
+                        answered={answered}
+                        setAnswered={setAnswered}
                         setTimeOut={setTimeOut}
                         questionNumber={questionNumber}
                         timer={timer}
@@ -323,7 +324,7 @@ function App() {
                       data={questions[currIndex]}
                       handleAnswer={handleAnswer}
                       setTimeOut={setTimeout}
-
+                      setAnswered={setAnswered}
                     />
 
                   </div>

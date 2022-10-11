@@ -7,6 +7,7 @@ import wrong from "../asset/sounds/Wrong Answer sound effect.mp3";
 const Questionnaire = ({
     data: { question, correct_answer, answers },
     handleAnswer,
+    setAnswered,
 
 
 }) => {
@@ -22,6 +23,7 @@ const Questionnaire = ({
     };
 
     const handleClick = (answer) => {
+        setAnswered(true);
         setSelectedAnswer(answer);
         setClassName("answer active");
         delay(200, () => {
