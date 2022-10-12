@@ -64,6 +64,13 @@ header {
   opacity: 0.25;
 }
 
+.qr-code {
+  z-index: 9999;
+  position: relative;
+  margin: 0 auto 30px;
+  width: 150px;
+}
+
 .startScreen {
   position: relative;
   height: 100vh;
