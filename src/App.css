@@ -67,8 +67,20 @@ header {
 .qr-code {
   z-index: 9999;
   position: relative;
-  margin: 0 auto 30px;
+  margin: 30px auto 30px;
   width: 150px;
+}
+
+
+.answer-table .header h4 {
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+
+.learn-more {
+  width: 300px;
+  margin: 0 auto;
 }
 
 .startScreen {
@@ -465,7 +477,8 @@ tr.row-attendee td {
 }
 
 .answer-table .header h1,
-.answer-table .header h2 {
+.answer-table .header h2,
+.answer-table .header h4 {
   color: black;
 }
 

@@ -239,7 +239,15 @@ function App() {
                       <div className="header">
                         <h1>You did great!</h1>
                         <h2><span>★ {earn}</span></h2>
+
                         <button onClick={showLeaderboard}>🏆 Go to leaderboard</button>
+
+
+                        <h4>or</h4>
+
+
+                        <img class="qr-code" src="./qr-code.png"/>
+                        <h4 className="learn-more">Learn more about Java at Microsoft!</h4>
                       </div>
 
                       <div className="answer-table">
