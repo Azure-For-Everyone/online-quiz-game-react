@@ -180,7 +180,6 @@ export default  [
           ]
       },
 
-      
       {
         "category": "React",
         "type": "multiple",
@@ -364,132 +363,96 @@ export default  [
         "category": "React",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "Azure App Service is a service for hosting ___.​",
+        "correct_answer": "web applications (JavaScript, NodeJS, Java, Mobile, and more).​",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "web applications written in .NET",
+            "mobile Apps only",
+            "high processing workloads"
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "What is a static Web app in Azure?",
+        "correct_answer": "Azure Static Web Apps is a service that automatically builds and deploys full stack web apps to Azure from a code repository.",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "Azure Static Web Apps are used for non-JavaScript applications",
+            "Azure Static Web Apps is used solely for server-side apps",
+            "Azure Static Web apps doesn't exists, Azure Web Apps does."
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "Is Azure static Web apps free?",
+        "correct_answer": "It's available through two different plans, Free and Standard",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "No, it's paid.",
+            "Yes, but only for students.",
+            "Yes with a coupon code."
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "What is Github Artifacts?",
+        "correct_answer": "A way to store data produced by a workflow",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "A cloud storage solution from Github",
+            "A place to store source code",
+            "A change request to your code base"
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "Which Microsoft product helps developers starting a new project quickly and efficiently?",
+        "correct_answer": "Azure Dev Box",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "Azure Virtual Desktop",
+            "Windows 365",
+            "Visual Workshop"
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "What is an octopus merge?",
+        "correct_answer": "It takes two or more branches and merge them in a single branch",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "It stages several commits and merges them at once",
+            "It's a type of octopus living in the atlantic ocean",
+            "It's a merge done with Git Kraken"
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "What is a protected branch in Github?",
+        "correct_answer": "A branch which you must meet certain standards to be able to commit to it",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "A secured branch which only accepts perfect code",
+            "A hidden branch, and only available for specific users or groups",
+            "A branch used to work on security features"
           ]
       },
       {
         "category": "PowerBI",
         "type": "multiple",
         "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
+        "question": "What was Github copilot trained on?",
+        "correct_answer": "Public GitHub repositories",
           "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
-          ]
-      },
-      {
-        "category": "PowerBI",
-        "type": "multiple",
-        "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
-          "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
-          ]
-      },
-      {
-        "category": "PowerBI",
-        "type": "multiple",
-        "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
-          "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
-          ]
-      },
-      {
-        "category": "PowerBI",
-        "type": "multiple",
-        "difficulty": "hard",
-        "question": "When was the first version of PowerBI released?",
-        "correct_answer": "2013",
-          "incorrect_answers": [
-            "2012",
-            "2014",
-            "2015"
+            "Private GitHub repositories",
+            "Windows repository",
+            "Stackoverflow"
           ]
       },
   ]
