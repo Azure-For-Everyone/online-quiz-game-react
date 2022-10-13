@@ -11,6 +11,7 @@ import Timesup from "./components/Timesup";
 import questionsDevoxx from "./components/QuestionsDevoxx";
 import questionsMicrosoft from "./components/QuestionsMicrosoft";
 import questionsDatamindsConnect from "./components/QuestionsDatamindsConnect";
+import questionsReact from "./components/QuestionsReact";
 import Leaderboard from "./components/Leaderboard";
 
 const apiUrl = "https://msft-quiz-api.azurewebsites.net";
@@ -107,6 +108,8 @@ function App() {
       qs = questionsDevoxx;
     } else if (theme === 'datamindsconnect'){
       qs = questionsDatamindsConnect
+    } else if (theme === 'reactbrussels'){
+      qs = questionsReact
     }
 
     const questions = qs.map((question) =>
@@ -214,7 +217,7 @@ function App() {
 
       <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "contain"}}>
         <header>
-          <h1>Test your knowledge<br/>Win a Surface headphone</h1>
+          <h1>Test your knowledge<br/>Win a MSFT examn voucher</h1>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
