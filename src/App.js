@@ -250,7 +250,7 @@ function App() {
 
 
                         <img class="qr-code" src="./qr-code.png"/>
-                        <h4 className="learn-more">Learn more about Java at Microsoft!</h4>
+                        <h4 className="learn-more">Learn more about JavaScript at Microsoft!</h4>
                       </div>
 
                       <div className="answer-table">
