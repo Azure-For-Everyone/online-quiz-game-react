@@ -405,5 +405,65 @@ export default  [
         "GitHub Enterprise Server",
         "Only public repos on github.com"
       ]
+  },
+  {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In Mesh for Teams, your avatar has no __",
+    "correct_answer": "Legs",
+      "incorrect_answers": [
+        "Eyebrows",
+        "Arms",
+        "Hair"
+      ]
+  },
+  {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In Teams, OC stands for?",
+    "correct_answer": "Operator Connect",
+      "incorrect_answers": [
+        "Office Center",
+        "Operator Contract",
+        "Operator Calling"
+      ]
+  },
+  {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What license does a Teams Phone device in the lobby requires to allow calling?",
+    "correct_answer": "Common Area Phone License",
+      "incorrect_answers": [
+        "Shared Device License",
+        "Phone Lobby License",
+        "Reception Desk Phone License"
+      ]
+  },
+  {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "MTRoA means ...",
+    "correct_answer": "Microsoft Teams Rooms on Android",
+      "incorrect_answers": [
+        "Microsoft Teams Rooms on Azure",
+        "Microsoft Teams Rooms of Angels",
+        "Microsoft Teams Rooms on Active"
+      ]
+  },
+  {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In the near future, all Call Queues and Auto Attendants will need ...",
+    "correct_answer": "Microsoft Teams Phone Resource Account license",
+      "incorrect_answers": [
+        "Microsoft Teams Phone System license",
+        "Microsoft Teams Phone E3 license",
+        "Microsoft Teams Virtual Phone license"
+      ]
   }
 ]
