@@ -312,6 +312,18 @@ export default  [
       ]
   },
   {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "When will you need a Teams Room Pro license to use multiple sceens on MTR?",
+    "correct_answer": "July, 1st 2023",
+      "incorrect_answers": [
+        "July, 1st 2024",
+        "December, 1st 2023",
+        "December, 1st 2024"
+      ]
+  },
+  {
     "category": "Viva",
     "type": "multiple",
     "difficulty": "hard",
