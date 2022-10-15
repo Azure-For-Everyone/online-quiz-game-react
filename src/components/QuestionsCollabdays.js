@@ -288,6 +288,30 @@ export default  [
       ]
   },
   {
+    "category": "Teams",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "When was Teams released?",
+    "correct_answer": "2017",
+      "incorrect_answers": [
+        "2016",
+        "2015",
+        "2018"
+      ]
+  },
+  {
+    "category": "Viva",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is not part of the Viva Suite License?",
+    "correct_answer": "Viva Sales",
+      "incorrect_answers": [
+        "Viva Engage",
+        "Viva Connects",
+        "Viva Goals"
+      ]
+  },
+  {
     "category": "Viva",
     "type": "multiple",
     "difficulty": "hard",
