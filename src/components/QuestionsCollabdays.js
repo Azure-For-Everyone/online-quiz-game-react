@@ -243,18 +243,6 @@ export default  [
     "category": "Viva",
     "type": "multiple",
     "difficulty": "hard",
-    "question": "How many languages does Microsoft Viva Learning support?",
-    "correct_answer": "27",
-      "incorrect_answers": [
-        "7",
-        "17",
-        "37"
-      ]
-  },
-  {
-    "category": "Viva",
-    "type": "multiple",
-    "difficulty": "hard",
     "question": "What is a prerequisite for Microsoft Viva Learning?",
     "correct_answer": "Microsoft Teams deployed in your organization",
       "incorrect_answers": [
@@ -263,8 +251,6 @@ export default  [
         "You need a SharePoint Server 2020 installation."
       ]
   },
-
-
   {
     "category": "Teams",
     "type": "multiple",
@@ -299,6 +285,89 @@ export default  [
         "7",
         "17",
         "37"
+      ]
+  },
+  {
+    "category": "Viva",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What was PowerBI based on?",
+    "correct_answer": "All of the above",
+      "incorrect_answers": [
+        "Power Query",
+        "Power Pivot",
+        "Power View"
+      ]
+  },
+  {
+    "category": "Viva",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "How is the engine called which sits on top Power Bi?",
+    "correct_answer": "Vertipaq",
+      "incorrect_answers": [
+        "Unity engine",
+        "PolyBase",
+        "Vertipack"
+      ]
+  },{
+    "category": "Chris",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which Github tool can detect vulnerabilities in the dependencies of your Github repository?",
+    "correct_answer": "Dependabot",
+      "incorrect_answers": [
+        "Github copilot",
+        "Github scanning",
+        "Vulneracheck",
+      ]
+  },
+  {
+    "category": "Chris",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is Github Artifacts?",
+    "correct_answer": "A way to store data produced by a workflow",
+      "incorrect_answers": [
+        "A cloud storage solution from Github",
+        "A place to store source code",
+        "A solution for an open issue",
+      ]
+  },
+  {
+    "category": "Chris",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is Github Actions?",
+    "correct_answer": "A platform that allows you to automate CI/CD (Build, Test, Deployment), and react to other GitHub events.",
+      "incorrect_answers": [
+        "A bot that helps you improve your DevOps Automation",
+        "A tool that helps you take action on security issues inside your codebase.",
+        "An AI pair programmer",
+      ]
+  },
+  {
+    "category": "Chris",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What tool can help you create a quick and consistent development environment?",
+    "correct_answer": "GitHub Codespaces",
+      "incorrect_answers": [
+        "GitHub Copilot",
+        "GitHub Actions",
+        "GitHub Container Registry",
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "GitHub secret scanning is available",
+    "correct_answer": "on private repos with GitHub Advanced Security and public repos on github.com",
+      "incorrect_answers": [
+        "Only private repos on github.com",
+        "GitHub Enterprise Server",
+        "Only public repos on github.com"
       ]
   }
 ]
