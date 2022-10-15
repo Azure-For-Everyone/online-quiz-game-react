@@ -11,6 +11,7 @@ import Timesup from "./components/Timesup";
 import questionsDevoxx from "./components/QuestionsDevoxx";
 import questionsMicrosoft from "./components/QuestionsMicrosoft";
 import questionsDatamindsConnect from "./components/QuestionsDatamindsConnect";
+import questionsCollabdays from "./components/QuestionsCollabdays";
 import questionsReact from "./components/QuestionsReact";
 import Leaderboard from "./components/Leaderboard";
 
@@ -110,6 +111,8 @@ function App() {
       qs = questionsDatamindsConnect
     } else if (theme === 'reactbrussels'){
       qs = questionsReact
+    } else if (theme === 'collabdays'){
+      qs = questionsCollabdays
     }
 
     const questions = qs.map((question) =>
@@ -217,7 +220,7 @@ function App() {
 
       <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "contain"}}>
         <header>
-          <h1>Test your knowledge<br/>Win a Surface Headphone</h1>
+          <h1>Test your knowledge<br/>Win a MSFT Exam voucher</h1>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />

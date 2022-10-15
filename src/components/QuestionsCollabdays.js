@@ -300,53 +300,5 @@ export default  [
         "17",
         "37"
       ]
-  },
-  {
-    "category": "Viva",
-    "type": "multiple",
-    "difficulty": "hard",
-    "question": "How many languages does Microsoft Viva Learning support?",
-    "correct_answer": "27",
-      "incorrect_answers": [
-        "7",
-        "17",
-        "37"
-      ]
-  },
-  {
-    "category": "Viva",
-    "type": "multiple",
-    "difficulty": "hard",
-    "question": "How many languages does Microsoft Viva Learning support?",
-    "correct_answer": "27",
-      "incorrect_answers": [
-        "7",
-        "17",
-        "37"
-      ]
-  },
-  {
-    "category": "Viva",
-    "type": "multiple",
-    "difficulty": "hard",
-    "question": "How many languages does Microsoft Viva Learning support?",
-    "correct_answer": "27",
-      "incorrect_answers": [
-        "7",
-        "17",
-        "37"
-      ]
-  },
-  {
-    "category": "Viva",
-    "type": "multiple",
-    "difficulty": "hard",
-    "question": "How many languages does Microsoft Viva Learning support?",
-    "correct_answer": "27",
-      "incorrect_answers": [
-        "7",
-        "17",
-        "37"
-      ]
-  },
+  }
 ]
