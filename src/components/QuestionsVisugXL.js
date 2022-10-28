@@ -142,5 +142,113 @@ export default  [
         "Azure Kubernetes Service",
         "Azure Container Apps"
       ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which Azure Messaging solution supports JMS?",
+    "correct_answer": "Azure Service Bus",
+      "incorrect_answers": [
+        "Azure Event Grid",
+        "Azure Event Hub",
+        "Azure Queue Storage"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which GitHub Action configures Java on a GitHub runner?",
+    "correct_answer": "actions/setup-java",
+      "incorrect_answers": [
+        "actions/initialise-java",
+        "actions/configure-java",
+        "actions/java-setup"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is Github Artifacts?",
+    "correct_answer": "A way to store data produced by a workflow",
+      "incorrect_answers": [
+        "A cloud storage solution from Github",
+        "A place to store source code",
+        "A change request to your code base"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which Microsoft product helps developers starting a new project quickly and efficiently?",
+    "correct_answer": "Azure Dev Box",
+      "incorrect_answers": [
+        "Azure Virtual Desktop",
+        "Windows 365",
+        "Visual Workshop"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which editor integrates with Azure",
+    "correct_answer": "IntelliJ",
+      "incorrect_answers": [
+        "vim",
+        "nano",
+        "notepad++"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is an octopus merge?",
+    "correct_answer": "It takes two or more branches and merge them in a single branch",
+      "incorrect_answers": [
+        "It stages several commits and merges them at once",
+        "It's a type of octopus living in the atlantic ocean",
+        "It's a merge done with Git Kraken"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is a protected branch in Github?",
+    "correct_answer": "A branch which you must meet certain standards to be able to commit to it",
+      "incorrect_answers": [
+        "A secured branch which only accepts perfect code",
+        "A hidden branch, and only available for specific users or groups",
+        "A branch used to work on security features"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Why would you create a pull request?",
+    "correct_answer": "To ask colleagues/community for code review before merging",
+      "incorrect_answers": [
+        "To pull code from a repository",
+        "To ask colleagues/community for help",
+        "To contact Microsoft support"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "How many Azure components do you need to create an approval flow using Java?",
+    "correct_answer": "1",
+      "incorrect_answers": [
+        "2",
+        "3",
+        "4"
+      ]
   }
 ]
