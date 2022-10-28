@@ -94,5 +94,53 @@ export default  [
         "GitHub Enterprise Server",
         "Only public repos on github.com"
       ]
+  },
+  {
+    "category": "Julien",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In JavaScript, what is the result of \"0.1+0.2\"?",
+    "correct_answer": "0.30000000000000004",
+      "incorrect_answers": [
+        "0.3",
+        "0",
+        "NaN"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is Azure Spring Apps?",
+    "correct_answer": "Managed service for hosting Spring Apps",
+      "incorrect_answers": [
+        "A service to deploy only a single Spring Boot app",
+        "A new Spring framework",
+        "A new IaaS solution for hosting Spring Apps"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which one(s) of these Azure solutions can you use to deploy Spring Cloud Apps?",
+    "correct_answer": "Azure Spring Apps",
+      "incorrect_answers": [
+        "Azure Spring Cloud",
+        "Azure Spring Framework",
+        "All the answers"
+      ]
+  },
+  {
+    "category": "PowerBI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which one(s) of these Azure solutions can you use to deploy containers?",
+    "correct_answer": "All the answers",
+      "incorrect_answers": [
+        "Azure Container Instances",
+        "Azure Kubernetes Service",
+        "Azure Container Apps"
+      ]
   }
 ]
