@@ -370,5 +370,29 @@ export default  [
         "Just-In-Test compiler",
         " Just-In-Tweak compiler"
       ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is the difference between the Stack and the Heap?",
+    "correct_answer": "The Stack are stored value types, the Heap stores reference types.",
+      "incorrect_answers": [
+        "The Heap are stored value types, the Stack stores reference types.",
+        "The Heap and the Stack both store reference types.",
+        "The Stack stores reference types, the Heap are stored value types."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is a delegate in .NET?",
+    "correct_answer": "A delegate in .NET is similar to a function pointer in C or C++.",
+      "incorrect_answers": [
+        "A delegate in .NET is similar to a function pointer in JavaScript.",
+        "A delegate in .NET is similar to a function pointer in Java.",
+        "A delegate in .NET is similar to a function pointer in Python."
+      ]
   }
 ]
