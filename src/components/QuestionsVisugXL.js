@@ -240,15 +240,135 @@ export default  [
       ]
   },
   {
-    "category": "PowerBI",
+    "category": ".NET CORE",
     "type": "multiple",
     "difficulty": "hard",
-    "question": "How many Azure components do you need to create an approval flow using Java?",
-    "correct_answer": "1",
+    "question": "What is Kestrel?",
+    "correct_answer": "Kestrel is an event-driven, I/O-based, open-source, cross-platform, and asynchronous server which hosts .NET applications.",
       "incorrect_answers": [
-        "2",
-        "3",
-        "4"
+        "Krestel is .NET Core library.",
+        "Krestel is plugin which you can install in VSCode",
+        "Krestel does not exist."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What are Razor Pages in .NET Core?",
+    "correct_answer": "Razor Pages is a server-side framework which works on a page-based approach to render applications in .NET Core",
+      "incorrect_answers": [
+        "Razor is a framework for PHP.",
+        "Razor Pages is a client-side framework which works on a page-based approach to render applications in .NET Core ",
+        "Razor Pages is a legacy solution that is no longer supported."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is the concept of inheritance?",
+    "correct_answer": "Inheritance allows to create new classes that reuse, extend, and modify the behavior defined in other classes.",
+      "incorrect_answers": [
+        "Inheritance is a way to deploy monolith applications.",
+        "Inheritance is a CI/CD technique to deploy your software",
+        "Inheritance is a learning platform for .NET developers."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Explain the difference between a class and an object",
+    "correct_answer": "A class is the definition of an object, and an object is instance of a class.",
+      "incorrect_answers": [
+        "An object is the definition of a class, and a class is instance of an object.",
+        "Object and class are the same things, just used in a different context.",
+        "Objects are only used in functional languages and Classes used in object oriented languages."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is the difference between managed and unmanaged code?",
+    "correct_answer": "Managed code is a code created by the .NET compiler.",
+      "incorrect_answers": [
+        "Unmanaged code is a code created by the .NET compiler.",
+        "Managed code is directly compiled to native machine code and depends on the architecture of the target machine.",
+        "Unmanaged code is no longer used."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is the difference between boxing and unboxing?",
+    "correct_answer": "Boxing is the process of converting a value type to the type object.",
+      "incorrect_answers": [
+        "Boxing is extracting the value type from the object.",
+        "Unboxing is the process of converting a value type to the type object.",
+        "Boxing and unboxing is concept which is no longer used."
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is LINQ is?",
+    "correct_answer": "Query operators that allow data manipulation, regardless of the data source.",
+      "incorrect_answers": [
+        "An integration library to map two endpoints.",
+        "An ETL tool that is used in a Microsoft IT landscape.",
+        "LINQ is an acronym for Language Integration Query"
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What do the following acronym in .NET stand for: IL?",
+    "correct_answer": "Intermediate Language",
+      "incorrect_answers": [
+        "Interconnected Language",
+        "Intermediate Lease",
+        "IL-compiler"
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What do the following acronym in .NET stand for: MSIL?",
+    "correct_answer": "Microsoft Intermediate Language",
+      "incorrect_answers": [
+        "Master Intermediate Language",
+        "Microsoft Interconnected Language",
+        "Microsoft Intro Leaser"
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What do the following acronym in .NET stand for: CLI?",
+    "correct_answer": "Common Language Infrastructure",
+      "incorrect_answers": [
+        "Common Language Information",
+        "Code Language Infrastructure",
+        "Common Left Infrastructure"
+      ]
+  }, 
+  {
+    "category": ".NET CORE",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What do the following acronym in .NET stand for: JIT?",
+    "correct_answer": "Just-In-Time compiler",
+      "incorrect_answers": [
+        "Just-Intermediate-Time compiler",
+        "Just-In-Test compiler",
+        " Just-In-Tweak compiler"
       ]
   }
 ]
