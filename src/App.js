@@ -11,6 +11,7 @@ import Timesup from "./components/Timesup";
 import questionsDevoxx from "./components/QuestionsDevoxx";
 import questionsMicrosoft from "./components/QuestionsMicrosoft";
 import questionsVisugXL from "./components/QuestionsVisugXL";
+import questionsCloudBrew from "./components/QuestionsCloudBrew";
 import questionsDatamindsConnect from "./components/QuestionsDatamindsConnect";
 import questionsCollabdays from "./components/QuestionsCollabdays";
 import questionsReact from "./components/QuestionsReact";
@@ -116,6 +117,8 @@ function App() {
       qs = questionsCollabdays
     } else if (theme === 'visugxl'){
       qs = questionsVisugXL
+    } else if (theme === 'cloudbrew'){
+      qs = questionsCloudBrew
     }
 
     const questions = qs.map((question) =>
