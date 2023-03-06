@@ -20,7 +20,7 @@ export default  [
       "incorrect_answers": [
         "Social Engineering",
         "Password",
-        "SQL Injection."
+        "SQL Injection"
       ]
   },
   {
@@ -138,7 +138,7 @@ export default  [
     "question": "When considering security, what is the common name given to separating your network into discrete entities?",
     "correct_answer": "Network segmentation",
       "incorrect_answers": [
-        "Network access control=",
+        "Network access control",
         "PPNP",
         "Virtual private network"
       ]
