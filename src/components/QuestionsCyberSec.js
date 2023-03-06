@@ -7,7 +7,7 @@ export default  [
     "correct_answer": "Confidentiality, integrity, and availability.",
       "incorrect_answers": [
         "Confidentiality, identity, authorization.",
-        "Confidentiality, identity, authorization.",
+        "Confidentiality, authentication, authorization.",
         "Authentication, identity, authorization."
       ]
   },
