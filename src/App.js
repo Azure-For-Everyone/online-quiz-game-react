@@ -15,6 +15,7 @@ import questionsCloudBrew from "./components/QuestionsCloudBrew";
 import questionsDatamindsConnect from "./components/QuestionsDatamindsConnect";
 import questionsCollabdays from "./components/QuestionsCollabdays";
 import questionsReact from "./components/QuestionsReact";
+import questionsCyberSec from "./components/QuestionsCyberSec";
 import Leaderboard from "./components/Leaderboard";
 
 const apiUrl = "https://msft-quiz-api.azurewebsites.net";
@@ -119,6 +120,8 @@ function App() {
       qs = questionsVisugXL
     } else if (theme === 'cloudbrew'){
       qs = questionsCloudBrew
+    } else if (theme === 'cybersec'){
+      qs = questionsCyberSec
     }
 
     const questions = qs.map((question) =>
@@ -226,7 +229,7 @@ function App() {
 
       <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "contain"}}>
         <header>
-          <h1>Test your knowledge<br/>Win a Surface Headphone</h1>
+          <h1>Test your Security knowledge<br/>Win great prices!</h1>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
@@ -259,7 +262,7 @@ function App() {
 
 
                         <img class="qr-code" src="./qr-code.png"/>
-                        <h4 className="learn-more">Learn more about JavaScript at Microsoft!</h4>
+                        <h4 className="learn-more">Learn more about Cyber security at Microsoft!</h4>
                       </div>
 
                       <div className="answer-table">
