@@ -51,7 +51,7 @@ export default function Start({ setUsername, setEmail }) {
           ref={inputRefEmail}
         />
         <p class="agree">
-          <input type="checkbox" id="agree"  ref={inputRefAgree}/> <label for="agree">My information is solely used for this game purposes (winner announcement). Your personal data (nickname and email address) will be removed after the winner of this game is announced.</label>
+          <input type="checkbox" id="agree"  ref={inputRefAgree}/> <label for="agree">My information is solely used for this game purposes (winner announcement). Your personal data (nickname and email address) will be removed after the winner of this game is announced; for example at end of day. Only your username (or nickname) will be displayed on the leaderboard. Your email address will not be used/shared with any Microsoft marketing engine or 3rd party. Microsoft is allowed to change the winning object (price) at any moment.</label>
         </p>
         <button className="startButton" onClick={handleClick}>
           Let's go!

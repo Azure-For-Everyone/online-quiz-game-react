@@ -1,5 +1,5 @@
 
-h1 {
+h1, h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 800;
   margin-top: 80px;
@@ -160,6 +160,13 @@ header {
   font-size: 67px;
   max-width: 1200px;
   margin: 120px auto 30px;
+}
+
+.leaderboard h2,
+.startScreen h2 {
+  font-size: 27px;
+  max-width: 1200px;
+  margin: 20px auto 30px;
 }
 
 .leaderboard button, 

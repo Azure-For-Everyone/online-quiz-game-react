@@ -229,7 +229,7 @@ function App() {
 
       <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "contain"}}>
         <header>
-          <h1>Test your Security knowledge<br/>Win great prices!</h1>
+          <h1>Test your Security knowledge<br/>Win great prices each day!</h1>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
@@ -260,9 +260,8 @@ function App() {
 
                         <h4>or</h4>
 
-
                         <img class="qr-code" src="./qr-code.png"/>
-                        <h4 className="learn-more">Learn more about Cyber security at Microsoft!</h4>
+                        <h4 className="learn-more">Learn more about cybersecurity at Microsoft!</h4>
                       </div>
 
                       <div className="answer-table">
