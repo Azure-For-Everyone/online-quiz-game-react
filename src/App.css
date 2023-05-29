@@ -214,6 +214,13 @@ tr.row-attendee td {
   background: white
 }
 
+@media screen and (max-width: 1000px) {
+  .leaderboard-table {
+    width: 100%;
+  }
+  
+}
+
 .score {
   text-align: right;
 }
@@ -227,6 +234,29 @@ tr.row-attendee td {
   width: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+  .leaderboard {
+    padding: 0;
+  }
+  .leaderboard h1, .startScreen h1 {
+    font-size: 30px;
+  }
+  .leaderboard h2 {
+    width: 100%;
+  }
+  .leaderboard-table {
+    padding: 0;
+  }
+  .leaderScreen, .startScreen {
+    position: fixed;
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    min-width: 30px;
+    height: 20px;
+  }
+}
 .form-register {
   display: table;
   background-color: white;
