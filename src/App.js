@@ -19,7 +19,7 @@ import questionsCyberSec from "./components/QuestionsCyberSec";
 import questionsOpenAI from "./components/QuestionsOpenAI";
 import Leaderboard from "./components/Leaderboard";
 
-const apiUrl = "https://msft-quiz-api.azurewebsites.net";
+const apiUrl = "https://quizapi-azureforeveryone.azurewebsites.net";
 const myName = "Microsoft";
 
 let currentYear = new Date().getFullYear();
