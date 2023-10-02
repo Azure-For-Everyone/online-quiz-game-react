@@ -192,12 +192,10 @@ class Leaderboard extends Component {
   render() {
     return (
       <div className='leaderboard' style={{"background-image": "url(./"+this.props.event+"-bg.png)", "background-size": "contain"}}>
-      <h1>Test your knowledge<br/>Win great prices each day!</h1>
+      <h1>Test your knowledge</h1>
 
         <button onClick={this.props.playGame}>🚀 Click to Play the Quiz</button>
-        
-        <h2>or practice first..</h2>
-        <img class="qr-code" src="./qr-code.png"/>
+   
         
         <div className='leaderboard-table'>
           <table id="lBoard">

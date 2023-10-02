@@ -17,6 +17,7 @@ import questionsCollabdays from "./components/QuestionsCollabdays";
 import questionsReact from "./components/QuestionsReact";
 import questionsCyberSec from "./components/QuestionsCyberSec";
 import questionsOpenAI from "./components/QuestionsOpenAI";
+import questionsMsbuild from "./components/QuestionsMsbuild";
 import Leaderboard from "./components/Leaderboard";
 
 const apiUrl = "https://quizapi-azureforeveryone.azurewebsites.net";
@@ -125,6 +126,8 @@ function App() {
       qs = questionsCyberSec
     } else if (theme === 'element612023'){
       qs = questionsOpenAI;
+    } else if (theme === 'msbuild'){
+      qs = questionsMsbuild;
     }
 
     const questions = qs.map((question) =>
@@ -232,7 +235,7 @@ function App() {
 
       <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "contain"}}>
         <header>
-          <h1>Test your knowledge<br/>Win great prices each day!</h1>
+          <h1>Test your knowledge</h1>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
