@@ -49,7 +49,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'quiz-frontend'
+          app-name: 'quizui-azureforeveryone'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E9E4E3AB5C4F485D9CD8F269830A5CE0 }}
           package: .
