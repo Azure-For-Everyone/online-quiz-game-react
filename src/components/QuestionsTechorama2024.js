@@ -94,5 +94,101 @@ export default  [
         "When code is locked down to the teams that need it",
         "A program used to build an Open Source community internally (e.g. drive usage adoption in a secure way, encourage contributions, recognition for OSS work among employees, etc.)"
       ]
+  },
+  {
+    "category": "GitHub",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is GitHub Copilot Workspace?",
+    "correct_answer": "A Copilot-native developer environment",
+      "incorrect_answers": [
+        "A space where you can build copilots",
+        "The next version of GitHub Copilot",
+        "An addition to GitHub Codespaces"
+      ]
+  },
+  {
+    "category": "Techorama",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "It's the xth birthday of Techorama",
+    "correct_answer": "10th",
+      "incorrect_answers": [
+        "7th",
+        "12th",
+        "9th"
+      ]
+  },
+  {
+    "category": "Techorama",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What was the theme of Techorama 2023?",
+    "correct_answer": "Jungle",
+      "incorrect_answers": [
+        "Pirates",
+        "Las Vegas",
+        "90's"
+      ]
+  },
+  {
+    "category": "Microsoft",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Who is the CEO of Microsoft?",
+    "correct_answer": "Satya Nadella",
+      "incorrect_answers": [
+        "Bill Gates",
+        "Thomas Dohmke",
+        "Sundar Pichai"
+      ]
+  },
+  {
+    "category": "faq",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "How much does Microsoft invest annually in cybersecurity?",
+    "correct_answer": "1B USD",
+      "incorrect_answers": [
+        "100K USD",
+        "10B USD",
+        "100M USD"
+      ]
+  },
+  {
+    "category": "OpenAI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "When was the GPT3 model released?",
+    "correct_answer": "2020",
+      "incorrect_answers": [
+        "2016",
+        "2021",
+        "2023"
+      ]
+  },
+  {
+    "category": "OpenAI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "How large is the dataset of GPT3?",
+    "correct_answer": "GPT-3 is trained on 750 gigabites of data",
+      "incorrect_answers": [
+        "GPT-3 is trained on 200 gigabites of data",
+        "GPT-3 is trained on 500 gigabites of data",
+        "GPT-3 is tained on 1 petabyte of data"
+      ]
+  },
+  {
+    "category": "OpenAI",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "On how many GPUs was the GPT3 model trained?",
+    "correct_answer": "This information is not disclosed",
+      "incorrect_answers": [
+        "50000 GPUs",
+        "8192 GPUs",
+        "3000 GPUs"
+      ]
   }
 ]
