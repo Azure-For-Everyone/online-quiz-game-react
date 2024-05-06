@@ -18,6 +18,7 @@ import questionsReact from "./components/QuestionsReact";
 import questionsCyberSec from "./components/QuestionsCyberSec";
 import questionsOpenAI from "./components/QuestionsOpenAI";
 import questionsMsbuild from "./components/QuestionsMsbuild";
+import questionsTechorama2024 from "./components/QuestionsTechorama2024";
 import Leaderboard from "./components/Leaderboard";
 
 const apiUrl = "https://quizapi-azureforeveryone.azurewebsites.net";
@@ -128,6 +129,8 @@ function App() {
       qs = questionsOpenAI;
     } else if (theme === 'msbuild'){
       qs = questionsMsbuild;
+    } else if (theme === 'techorama2024'){
+      qs = questionsTechorama2024;
     }
 
     const questions = qs.map((question) =>
