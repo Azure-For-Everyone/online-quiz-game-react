@@ -8,6 +8,7 @@ import { Questionnaire } from './components';
 import Timer from "./components/Timer";
 import Start from "./components/Start";
 import Timesup from "./components/Timesup";
+import Leaderboard from "./components/Leaderboard";
 import questionsDevoxx from "./components/QuestionsDevoxx";
 import questionsMicrosoft from "./components/QuestionsMicrosoft";
 import questionsVisugXL from "./components/QuestionsVisugXL";
@@ -20,7 +21,7 @@ import questionsOpenAI from "./components/QuestionsOpenAI";
 import questionsMsbuild from "./components/QuestionsMsbuild";
 import questionsTechorama2024 from "./components/QuestionsTechorama2024";
 import QuestionsDevCo24 from "./components/QuestionsDevCo24";
-import Leaderboard from "./components/Leaderboard";
+import QuestionsCyberSec from "./components/QuestionsCyberSec";
 
 const apiUrl = "https://quizapi-azureforeveryone.azurewebsites.net";
 const myName = "Microsoft";
@@ -134,6 +135,8 @@ function App() {
       qs = questionsTechorama2024;
     } else if (theme === 'devco24'){
       qs = QuestionsDevCo24;
+    }else if (theme === 'cybersec24'){
+      qs = QuestionsCyberSec;
     }
 
     const questions = qs.map((question) =>
