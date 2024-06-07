@@ -22,6 +22,7 @@ import questionsMsbuild from "./components/QuestionsMsbuild";
 import questionsTechorama2024 from "./components/QuestionsTechorama2024";
 import QuestionsDevCo24 from "./components/QuestionsDevCo24";
 import QuestionsCyberSec from "./components/QuestionsCyberSec";
+import QuestionsDelaware from "./components/QuestionsDelaware";
 
 const apiUrl = "https://quizapi-azureforeveryone.azurewebsites.net";
 const myName = "Microsoft";
@@ -135,8 +136,10 @@ function App() {
       qs = questionsTechorama2024;
     } else if (theme === 'devco24'){
       qs = QuestionsDevCo24;
-    }else if (theme === 'cybersec24'){
+    } else if (theme === 'cybersec24'){
       qs = QuestionsCyberSec;
+    } else if (theme === 'delaware24'){
+      qs = QuestionsDelaware;
     }
 
     const questions = qs.map((question) =>
@@ -245,7 +248,6 @@ function App() {
       <div className="startScreen" style={{"background-image": "url(./"+theme+"-bg.png)", "background-size": "cover"}}>
         <header>
           <h1>Test your knowledge</h1>
-          <h2>Win Microsoft Swag!</h2>
           <button className="go-to" onClick={showLeaderboard}>🏆 Go to leaderboard</button>
         </header>
         <Start setUsername={setUserName} setEmail={setEmail} />
